@@ -7,6 +7,7 @@ use \Input;
 use \Redirect;
 use \Request;
 use \Hash;
+use Taskforcedev\Wiki\Models\WikiPage;
 use Taskforcedev\LaravelSupport\Http\Controllers\Controller;
 
 class WikiController extends Controller
@@ -16,9 +17,12 @@ class WikiController extends Controller
         $url = $this->canonicalUrl($page);
 
         try {
-            
+            $page = WikiPage::where('url', $url)->firstOrFail();
+            // Page exists
+            return view('taskforce-wiki.page', $page);
         } catch (Exception $e) {
-
+            // Page does not exist.
+            return view('taskforce-wiki.createPage', $page);
         }
     }
 
