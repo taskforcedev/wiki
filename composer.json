@@ -1,0 +1,22 @@
+{
+    "name": "taskforcedev/wiki",
+    "description": "A Laravel 5 package to provide a WIKI.",
+    "authors": [
+        {
+            "name": "taskforcedev",
+            "email": "taskforce2eu@gmail.com"
+        }
+    ],
+    "keywords": ["wiki", "routes", "views", "laravel"],
+    "require": {
+        "php": ">=5.5.0",
+        "laravel/framework": "5.*",
+        "taskforcedev/laravel-support": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Taskforcedev\\Wiki\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
