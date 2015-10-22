@@ -14,4 +14,9 @@ class AdminController extends Controller
     public function deletePage($id)
     {
     }
+
+    public function install()
+    {
+        // Perform DB migrations.
+    }
 }
