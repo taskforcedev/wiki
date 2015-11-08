@@ -1,5 +1,7 @@
 <?php namespace Taskforcedev\Wiki\Models;
 
+use \Exception;
+use \Validator;
 use Illuminate\Database\Eloquent\Model;
 
 class WikiPage extends Model
@@ -18,7 +20,7 @@ class WikiPage extends Model
         try {
             $page = WikiPage::where('url', $url)->firstOrFail();
             return true;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }
