@@ -59,4 +59,24 @@ class WikiController extends Controller
 
       return $url;
     }
+
+    public function create()
+    {
+        $data = Request::only('title', 'content', 'url');
+
+        $url = $this->canonicalUrl($data['url']);
+
+        if (WikiPage::exists($url)) {
+            return redirect()->route('wiki.page.view', $url);
+        }
+
+        $valid = WikiPage::valid($data);
+        if ($valid === true) {
+            $page = WikiPage::create($data);
+            $url = $page->url;
+            return redirect()->route('wiki.page.view', $url);
+        } else {
+            return response($valid, 500);
+        }
+    }
 }
