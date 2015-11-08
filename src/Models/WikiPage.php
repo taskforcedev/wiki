@@ -6,5 +6,5 @@ class WikiPage extends Model
 {
     public $table = 'wiki_pages';
 
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content', 'url'];
 }

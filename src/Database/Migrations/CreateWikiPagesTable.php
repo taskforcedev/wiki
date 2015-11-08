@@ -16,8 +16,9 @@ class CreateWikiPagesTable
         if (!Schema::hasTable($this->table)) {
             Schema::create($this->table, function ($table) {
                 $table->increments('id');
-                $table->string('page');
-                $table->longtext('body');
+                $table->string('title');
+                $table->longtext('content');
+                $table->string('url');
                 $table->timestamps();
             });
         }
