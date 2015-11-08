@@ -20,11 +20,11 @@ class WikiController extends Controller
         try {
             $page = WikiPage::where('url', $url)->firstOrFail();
             // Page exists
-            return view('taskforce-wiki.page', $page);
+            return view('taskforce-wiki::page', $page);
         } catch (Exception $e) {
             // Page does not exist.
             $data['page'] = $page;
-            return view('taskforce-wiki.createPage', $data);
+            return view('taskforce-wiki::createPage', $data);
         }
     }
 
