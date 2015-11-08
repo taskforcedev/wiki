@@ -18,5 +18,7 @@
             <label for="content">Content</label>
             <textarea class="form-control" name="content" rows="20"></textarea>
         </div>
+
+        <input type="submit" value="Create Page" />
     </form>
 @endsection
