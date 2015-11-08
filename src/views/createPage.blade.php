@@ -19,6 +19,8 @@
             <textarea class="form-control" name="content" rows="20"></textarea>
         </div>
 
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
         <input type="submit" value="Create Page" />
     </form>
 @endsection
