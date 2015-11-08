@@ -11,7 +11,7 @@
         <input class="form-control" type="text" name="url" value="{{ $page }}" />
 
         <label for="content">Content</label>
-        <textarea class="form-control" name="content">
+        <textarea class="form-control" name="content" rows="20">
         </textarea>
     </form>
 @endsection
