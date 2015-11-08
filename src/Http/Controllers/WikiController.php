@@ -24,8 +24,9 @@ class WikiController extends Controller
 
         try {
             $page = WikiPage::where('url', $url)->firstOrFail();
+            $data['page'] = $page;
             // Page exists
-            return view('taskforce-wiki::page', $page);
+            return view('taskforce-wiki::page', $data);
         } catch (Exception $e) {
             // Page does not exist.
             $data['page'] = $page;
