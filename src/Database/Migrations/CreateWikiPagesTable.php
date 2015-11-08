@@ -1,5 +1,7 @@
 <?php namespace Taskforcedev\Wiki\Database\Migrations;
 
+use \Schema;
+
 /**
  * Class CreateWikiPagesTable
  * @package Taskforcedev\Wiki\Database\Migrations
