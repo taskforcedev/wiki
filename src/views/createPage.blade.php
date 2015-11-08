@@ -5,7 +5,7 @@
 
     <form action="{{ route('wiki.page.create') }}" method="post">
         <label for="title">Title</label>
-        <input class="form-control" type="text" name="title" />
+        <input class="form-control" type="text" name="title" value="{{ $page }}" />
 
         <label for="url">URL</label>
         <input class="form-control" type="text" name="url" value="{{ $page }}" />
