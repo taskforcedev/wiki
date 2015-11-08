@@ -12,6 +12,11 @@ use Taskforcedev\LaravelSupport\Http\Controllers\Controller;
 
 class WikiController extends Controller
 {
+    /**
+     * View a wiki page or show page creation view.
+     * @param string $page Page name
+     * @return mixed
+     */
     public function view($page)
     {
         $url = $this->canonicalUrl($page);
@@ -28,6 +33,11 @@ class WikiController extends Controller
         }
     }
 
+    /**
+     * Retrieve a canonical url from a page title.
+     * @param string $page Page title.
+     * @return string
+     */
     public function canonicalUrl($page)
     {
       $replacements = [
