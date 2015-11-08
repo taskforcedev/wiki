@@ -18,5 +18,18 @@ class AdminController extends Controller
     public function install()
     {
         // Perform DB migrations.
+        $dbMigrationNS = "Taskforcedev\\Wiki\\Database\\Migrations\\";
+
+        $migrations = [
+            'CreateWikiPagesTable'
+        ];
+
+        foreach ($migrations as $migration) {
+            $class = $dbMigrationNS . $migration;
+            $mig = new $class;
+            $mig->migrate();
+        }
+
+        return view('taskforce-wiki::admin/install');
     }
 }
