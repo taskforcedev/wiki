@@ -4,14 +4,14 @@
     <h1>{{ $sitename }} - Create Wiki Page - {{ $page }}</h1>
 
     <form action="{{ route('wiki.page.create') }}" method="post">
-        <label>Title</label>
-        <input type="text" name="title" />
+        <label for="title">Title</label>
+        <input class="form-control" type="text" name="title" />
 
-        <label>URL</label>
-        <input type="text" name="url" value="{{ $page }}" />
+        <label for="url">URL</label>
+        <input class="form-control" type="text" name="url" value="{{ $page }}" />
 
-        <label>Content</label>
-        <textarea name="content">
+        <label for="content">Content</label>
+        <textarea class="form-control" name="content">
         </textarea>
     </form>
 @endsection
