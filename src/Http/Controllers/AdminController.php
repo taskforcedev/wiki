@@ -17,6 +17,8 @@ class AdminController extends Controller
 
     public function install()
     {
+        $data = $this->buildData();
+
         // Perform DB migrations.
         $dbMigrationNS = "Taskforcedev\\Wiki\\Database\\Migrations\\";
 
@@ -30,6 +32,6 @@ class AdminController extends Controller
             $mig->migrate();
         }
 
-        return view('taskforce-wiki::admin/install');
+        return view('taskforce-wiki::admin/install', $data);
     }
 }
