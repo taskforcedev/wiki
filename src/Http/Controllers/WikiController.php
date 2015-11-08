@@ -15,6 +15,7 @@ class WikiController extends Controller
     public function view($page)
     {
         $url = $this->canonicalUrl($page);
+        $data = $this->buildData();
 
         try {
             $page = WikiPage::where('url', $url)->firstOrFail();
@@ -22,7 +23,8 @@ class WikiController extends Controller
             return view('taskforce-wiki.page', $page);
         } catch (Exception $e) {
             // Page does not exist.
-            return view('taskforce-wiki.createPage', $page);
+            $data['page'] = $page;
+            return view('taskforce-wiki.createPage', $data);
         }
     }
 
